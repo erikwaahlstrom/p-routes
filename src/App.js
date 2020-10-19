@@ -1,12 +1,16 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
-import "bootstrap/dist/css/bootstrap.min.css";
+import DashBoard from "./components/dashboard/DashBoard";
+import NavBar from "./components/layout/NavBar.js";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <div>
-      <Button>Button</Button>
-    </div>
+    <BrowserRouter>
+      <NavBar />
+      <Switch>
+        <Route path="/" component={DashBoard}></Route>
+      </Switch>
+    </BrowserRouter>
   );
 };
 
