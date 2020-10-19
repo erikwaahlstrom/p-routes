@@ -3,9 +3,6 @@ import { connect } from "react-redux";
 import { fetchUsers } from "../../store/actions/userActions";
 
 const UserList = ({ userData, fetchUsers }) => {
-  console.log(userData);
-  const wow = userData.users.map((user) => user.first_name);
-  console.log(wow);
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -19,7 +16,7 @@ const UserList = ({ userData, fetchUsers }) => {
       <div>
         {userData &&
           userData.users &&
-          userData.users.map((user) => <p>{user.first_name}</p>)}
+          userData.users.map((user, index) => <p key={index}>{user.first_name}</p>)}
       </div>
     </div>
   );

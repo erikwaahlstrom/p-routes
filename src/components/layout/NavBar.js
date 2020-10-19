@@ -15,7 +15,9 @@ const NavBar = () => {
             <Link to="/" className="nav-link">
               Home
             </Link>
-            <Link className="nav-link">Link</Link>
+            <Link to="" className="nav-link">
+              Link
+            </Link>
             <SignedInLinks />
             <SignedOutLinks />
           </Nav>
