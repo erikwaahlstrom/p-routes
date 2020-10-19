@@ -11,7 +11,10 @@ export const fetchUsers = () => {
     axios
       .get("https://reqres.in/api/users")
       .then((response) => {
-        const users = response.data;
+        console.log(response.data);
+        const dataArr = response.data.data.map((item) => item);
+        console.log(dataArr);
+        const users = dataArr;
         dispatch(fetchUsersSuccess(users));
       })
       .catch((error) => {
